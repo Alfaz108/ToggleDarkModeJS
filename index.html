@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body.light-mode {
+      background-color: white;
+      color: black;
+    }
+    
+    body.dark-mode {
+      background-color: black;
+      color: white;
+    }
+    .dark-mode-icon {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: #333;
+    }
+  </style>
+  <title>Dark Mode Toggle</title>
+</head>
+<body class="light-mode">
+  <button id="darkModeToggle" class="dark-mode-icon">
+    <i class="fas fa-moon"></i>
+  </button>
+  <div id="content">
+    <h1> Toggle Dark Mode</h1>
+    <p>Md. Alfaz Bin Rumon</p>
+  </div>
+
+
+  <script>
+    const darkModeToggle = document.getElementById("darkModeToggle");
+    const body = document.body;
+    const contentDiv = document.getElementById("content");
+    const icon = darkModeToggle.querySelector("i");
+    
+    darkModeToggle.addEventListener("click", function () {
+      body.classList.toggle("dark-mode");
+      contentDiv.classList.toggle("dark-mode-content");
+      icon.classList.toggle("fa-moon");
+      icon.classList.toggle("fa-sun");
+    });
+  </script>
+</body>
+</html>
